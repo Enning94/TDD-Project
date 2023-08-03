@@ -24,4 +24,17 @@ describe Solver do
             expect(@solver.factorial(-1)).to raise_error(ArgumentError, "Factorial is only defined for non-negative integers")
           end
     end
+
+    context "Reverse a string arguement passed as a word" do
+
+        it "should reverse the word 'hello' " do
+            expect(@solver.reverse("hello")).to eq("olleh")
+        end
+
+        it "should reverse the word 'Ruby' " do
+            expect(@solver.reverse("Ruby")).to eq("ybuR")
+        end
+
+    end
+    
 end
