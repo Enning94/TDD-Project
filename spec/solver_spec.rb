@@ -36,5 +36,23 @@ describe Solver do
         end
 
     end
+
+    context "Takes an Integer as arguement and return a string" do
+
+        it "should return 'fizz' for numbers divisible by 3" do
+          expect(@solver.fizzbuzz(9)).to eq("fizz")
+        end
     
+        it "should return 'buzz' for numbers divisible by 5" do
+          expect(@solver.fizzbuzz(25)).to eq("buzz")
+        end
+    
+        it "should return 'fizzbuzz' for numbers divisible by 3 and 5" do
+          expect(@solver.fizzbuzz(30)).to eq("fizzbuzz")
+        end
+    
+        it "should return the number as string for other cases" do
+          expect(solver.fizzbuzz(8)).to eq("8")
+        end
+      end
 end
