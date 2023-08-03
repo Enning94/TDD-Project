@@ -52,7 +52,7 @@ describe Solver do
         end
     
         it "should return the number as string for other cases" do
-          expect(solver.fizzbuzz(8)).to eq("8")
+          expect(@solver.fizzbuzz(8)).to eq("8")
         end
       end
 end
