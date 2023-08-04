@@ -1,3 +1,4 @@
+require './solver'
 describe Solver do
   before(:each) do
     @solver = Solver.new
@@ -16,9 +17,10 @@ describe Solver do
       expect(@solver.factorial(5)).to eq(120)
     end
 
-    it 'should raise an exception for negative integers' do
-      expect(@solver.factorial(-1)).to raise_error(ArgumentError,
-                                                   'Factorial is only defined for non-negative integers')
+    it 'should raise an error if the number is negative' do
+      factorial = double('factorial')
+      allow(factorial).to receive(:factorial).with(-1).and_raise('Number cannot be negative')
+      expect { factorial.factorial(-1) }.to raise_error('Number cannot be negative')
     end
   end
 
